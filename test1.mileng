@@ -1,0 +1,3 @@
+inicio
+  escribir("Hola Mundo");
+fin

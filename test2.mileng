@@ -1,0 +1,4 @@
+inicio
+  decimal x = 5.2 + (3.8 * 2);
+  escribir(x);
+fin

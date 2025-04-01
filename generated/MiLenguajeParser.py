@@ -1,4 +1,4 @@
-# Generated from MiLenguaje.g4 by ANTLR 4.13.2
+# Generated from grammar/MiLenguaje.g4 by ANTLR 4.13.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,73 +10,75 @@ else:
 
 def serializedATN():
     return [
-        4,1,36,208,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,36,212,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,1,0,1,0,1,
-        0,1,0,1,0,1,1,1,1,1,1,1,1,3,1,62,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,4,
-        1,4,1,4,1,4,3,4,74,8,4,1,5,1,5,1,5,1,5,1,5,1,5,3,5,82,8,5,1,6,1,
-        6,1,6,1,6,1,6,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,3,8,97,8,8,1,9,1,9,
-        1,9,1,10,1,10,1,10,1,10,1,10,3,10,107,8,10,1,11,1,11,1,11,1,11,1,
-        11,1,11,1,11,1,11,3,11,117,8,11,1,12,1,12,1,12,1,12,1,12,1,12,1,
-        12,1,12,1,12,1,13,1,13,1,13,1,13,1,13,1,13,3,13,134,8,13,1,14,1,
-        14,1,14,1,14,1,15,1,15,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,
-        17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,3,17,161,8,
-        17,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,19,1,19,3,19,174,
-        8,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,21,1,21,3,21,186,
-        8,21,1,22,1,22,1,22,1,22,1,22,1,22,1,23,1,23,3,23,196,8,23,1,24,
-        1,24,1,24,1,25,1,25,1,25,1,25,1,25,3,25,206,8,25,1,25,0,0,26,0,2,
-        4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,
-        50,0,4,1,0,3,6,1,0,14,15,1,0,16,18,1,0,19,24,200,0,52,1,0,0,0,2,
-        61,1,0,0,0,4,63,1,0,0,0,6,67,1,0,0,0,8,73,1,0,0,0,10,81,1,0,0,0,
-        12,83,1,0,0,0,14,88,1,0,0,0,16,96,1,0,0,0,18,98,1,0,0,0,20,106,1,
-        0,0,0,22,116,1,0,0,0,24,118,1,0,0,0,26,133,1,0,0,0,28,135,1,0,0,
-        0,30,139,1,0,0,0,32,141,1,0,0,0,34,160,1,0,0,0,36,162,1,0,0,0,38,
-        173,1,0,0,0,40,175,1,0,0,0,42,185,1,0,0,0,44,187,1,0,0,0,46,195,
-        1,0,0,0,48,197,1,0,0,0,50,205,1,0,0,0,52,53,5,1,0,0,53,54,3,2,1,
-        0,54,55,3,8,4,0,55,56,5,2,0,0,56,1,1,0,0,0,57,58,3,4,2,0,58,59,3,
-        2,1,0,59,62,1,0,0,0,60,62,1,0,0,0,61,57,1,0,0,0,61,60,1,0,0,0,62,
-        3,1,0,0,0,63,64,3,6,3,0,64,65,5,32,0,0,65,66,5,30,0,0,66,5,1,0,0,
-        0,67,68,7,0,0,0,68,7,1,0,0,0,69,70,3,10,5,0,70,71,3,8,4,0,71,74,
-        1,0,0,0,72,74,1,0,0,0,73,69,1,0,0,0,73,72,1,0,0,0,74,9,1,0,0,0,75,
-        82,3,12,6,0,76,82,3,24,12,0,77,82,3,32,16,0,78,82,3,34,17,0,79,82,
-        3,44,22,0,80,82,3,36,18,0,81,75,1,0,0,0,81,76,1,0,0,0,81,77,1,0,
-        0,0,81,78,1,0,0,0,81,79,1,0,0,0,81,80,1,0,0,0,82,11,1,0,0,0,83,84,
-        5,32,0,0,84,85,5,25,0,0,85,86,3,14,7,0,86,87,5,30,0,0,87,13,1,0,
-        0,0,88,89,3,18,9,0,89,90,3,16,8,0,90,15,1,0,0,0,91,92,7,1,0,0,92,
-        93,3,18,9,0,93,94,3,16,8,0,94,97,1,0,0,0,95,97,1,0,0,0,96,91,1,0,
-        0,0,96,95,1,0,0,0,97,17,1,0,0,0,98,99,3,22,11,0,99,100,3,20,10,0,
-        100,19,1,0,0,0,101,102,7,2,0,0,102,103,3,22,11,0,103,104,3,20,10,
-        0,104,107,1,0,0,0,105,107,1,0,0,0,106,101,1,0,0,0,106,105,1,0,0,
-        0,107,21,1,0,0,0,108,109,5,26,0,0,109,110,3,14,7,0,110,111,5,27,
-        0,0,111,117,1,0,0,0,112,117,5,32,0,0,113,117,5,33,0,0,114,117,5,
-        34,0,0,115,117,5,13,0,0,116,108,1,0,0,0,116,112,1,0,0,0,116,113,
-        1,0,0,0,116,114,1,0,0,0,116,115,1,0,0,0,117,23,1,0,0,0,118,119,5,
-        7,0,0,119,120,5,26,0,0,120,121,3,28,14,0,121,122,5,27,0,0,122,123,
-        5,28,0,0,123,124,3,8,4,0,124,125,5,29,0,0,125,126,3,26,13,0,126,
-        25,1,0,0,0,127,128,5,8,0,0,128,129,5,28,0,0,129,130,3,8,4,0,130,
-        131,5,29,0,0,131,134,1,0,0,0,132,134,1,0,0,0,133,127,1,0,0,0,133,
-        132,1,0,0,0,134,27,1,0,0,0,135,136,3,14,7,0,136,137,3,30,15,0,137,
-        138,3,14,7,0,138,29,1,0,0,0,139,140,7,3,0,0,140,31,1,0,0,0,141,142,
-        5,9,0,0,142,143,5,26,0,0,143,144,3,28,14,0,144,145,5,27,0,0,145,
-        146,5,28,0,0,146,147,3,8,4,0,147,148,5,29,0,0,148,33,1,0,0,0,149,
-        150,5,10,0,0,150,151,5,26,0,0,151,152,5,32,0,0,152,153,5,27,0,0,
-        153,161,5,30,0,0,154,155,5,11,0,0,155,156,5,26,0,0,156,157,3,14,
-        7,0,157,158,5,27,0,0,158,159,5,30,0,0,159,161,1,0,0,0,160,149,1,
-        0,0,0,160,154,1,0,0,0,161,35,1,0,0,0,162,163,5,12,0,0,163,164,5,
-        32,0,0,164,165,5,26,0,0,165,166,3,38,19,0,166,167,5,27,0,0,167,168,
-        5,28,0,0,168,169,3,8,4,0,169,170,5,29,0,0,170,37,1,0,0,0,171,174,
-        3,40,20,0,172,174,1,0,0,0,173,171,1,0,0,0,173,172,1,0,0,0,174,39,
-        1,0,0,0,175,176,3,6,3,0,176,177,5,32,0,0,177,178,3,42,21,0,178,41,
-        1,0,0,0,179,180,5,31,0,0,180,181,3,6,3,0,181,182,5,32,0,0,182,183,
-        3,42,21,0,183,186,1,0,0,0,184,186,1,0,0,0,185,179,1,0,0,0,185,184,
-        1,0,0,0,186,43,1,0,0,0,187,188,5,32,0,0,188,189,5,26,0,0,189,190,
-        3,46,23,0,190,191,5,27,0,0,191,192,5,30,0,0,192,45,1,0,0,0,193,196,
-        3,48,24,0,194,196,1,0,0,0,195,193,1,0,0,0,195,194,1,0,0,0,196,47,
-        1,0,0,0,197,198,3,14,7,0,198,199,3,50,25,0,199,49,1,0,0,0,200,201,
-        5,31,0,0,201,202,3,14,7,0,202,203,3,50,25,0,203,206,1,0,0,0,204,
-        206,1,0,0,0,205,200,1,0,0,0,205,204,1,0,0,0,206,51,1,0,0,0,12,61,
-        73,81,96,106,116,133,160,173,185,195,205
+        0,1,0,1,0,1,1,1,1,1,1,1,1,3,1,62,8,1,1,2,1,2,1,2,1,2,3,2,68,8,2,
+        1,2,1,2,1,3,1,3,1,4,1,4,1,4,1,4,3,4,78,8,4,1,5,1,5,1,5,1,5,1,5,1,
+        5,3,5,86,8,5,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,
+        3,8,101,8,8,1,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,3,10,111,8,10,1,
+        11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,3,11,121,8,11,1,12,1,12,1,
+        12,1,12,1,12,1,12,1,12,1,12,1,12,1,13,1,13,1,13,1,13,1,13,1,13,3,
+        13,138,8,13,1,14,1,14,1,14,1,14,1,15,1,15,1,16,1,16,1,16,1,16,1,
+        16,1,16,1,16,1,16,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,17,1,
+        17,1,17,3,17,165,8,17,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,18,1,
+        18,1,19,1,19,3,19,178,8,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,
+        21,1,21,1,21,3,21,190,8,21,1,22,1,22,1,22,1,22,1,22,1,22,1,23,1,
+        23,3,23,200,8,23,1,24,1,24,1,24,1,25,1,25,1,25,1,25,1,25,3,25,210,
+        8,25,1,25,0,0,26,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,
+        36,38,40,42,44,46,48,50,0,4,1,0,3,6,1,0,14,15,1,0,16,18,1,0,19,24,
+        205,0,52,1,0,0,0,2,61,1,0,0,0,4,63,1,0,0,0,6,71,1,0,0,0,8,77,1,0,
+        0,0,10,85,1,0,0,0,12,87,1,0,0,0,14,92,1,0,0,0,16,100,1,0,0,0,18,
+        102,1,0,0,0,20,110,1,0,0,0,22,120,1,0,0,0,24,122,1,0,0,0,26,137,
+        1,0,0,0,28,139,1,0,0,0,30,143,1,0,0,0,32,145,1,0,0,0,34,164,1,0,
+        0,0,36,166,1,0,0,0,38,177,1,0,0,0,40,179,1,0,0,0,42,189,1,0,0,0,
+        44,191,1,0,0,0,46,199,1,0,0,0,48,201,1,0,0,0,50,209,1,0,0,0,52,53,
+        5,1,0,0,53,54,3,2,1,0,54,55,3,8,4,0,55,56,5,2,0,0,56,1,1,0,0,0,57,
+        58,3,4,2,0,58,59,3,2,1,0,59,62,1,0,0,0,60,62,1,0,0,0,61,57,1,0,0,
+        0,61,60,1,0,0,0,62,3,1,0,0,0,63,64,3,6,3,0,64,67,5,32,0,0,65,66,
+        5,25,0,0,66,68,3,14,7,0,67,65,1,0,0,0,67,68,1,0,0,0,68,69,1,0,0,
+        0,69,70,5,30,0,0,70,5,1,0,0,0,71,72,7,0,0,0,72,7,1,0,0,0,73,74,3,
+        10,5,0,74,75,3,8,4,0,75,78,1,0,0,0,76,78,1,0,0,0,77,73,1,0,0,0,77,
+        76,1,0,0,0,78,9,1,0,0,0,79,86,3,12,6,0,80,86,3,24,12,0,81,86,3,32,
+        16,0,82,86,3,34,17,0,83,86,3,44,22,0,84,86,3,36,18,0,85,79,1,0,0,
+        0,85,80,1,0,0,0,85,81,1,0,0,0,85,82,1,0,0,0,85,83,1,0,0,0,85,84,
+        1,0,0,0,86,11,1,0,0,0,87,88,5,32,0,0,88,89,5,25,0,0,89,90,3,14,7,
+        0,90,91,5,30,0,0,91,13,1,0,0,0,92,93,3,18,9,0,93,94,3,16,8,0,94,
+        15,1,0,0,0,95,96,7,1,0,0,96,97,3,18,9,0,97,98,3,16,8,0,98,101,1,
+        0,0,0,99,101,1,0,0,0,100,95,1,0,0,0,100,99,1,0,0,0,101,17,1,0,0,
+        0,102,103,3,22,11,0,103,104,3,20,10,0,104,19,1,0,0,0,105,106,7,2,
+        0,0,106,107,3,22,11,0,107,108,3,20,10,0,108,111,1,0,0,0,109,111,
+        1,0,0,0,110,105,1,0,0,0,110,109,1,0,0,0,111,21,1,0,0,0,112,113,5,
+        26,0,0,113,114,3,14,7,0,114,115,5,27,0,0,115,121,1,0,0,0,116,121,
+        5,32,0,0,117,121,5,33,0,0,118,121,5,34,0,0,119,121,5,13,0,0,120,
+        112,1,0,0,0,120,116,1,0,0,0,120,117,1,0,0,0,120,118,1,0,0,0,120,
+        119,1,0,0,0,121,23,1,0,0,0,122,123,5,7,0,0,123,124,5,26,0,0,124,
+        125,3,28,14,0,125,126,5,27,0,0,126,127,5,28,0,0,127,128,3,8,4,0,
+        128,129,5,29,0,0,129,130,3,26,13,0,130,25,1,0,0,0,131,132,5,8,0,
+        0,132,133,5,28,0,0,133,134,3,8,4,0,134,135,5,29,0,0,135,138,1,0,
+        0,0,136,138,1,0,0,0,137,131,1,0,0,0,137,136,1,0,0,0,138,27,1,0,0,
+        0,139,140,3,14,7,0,140,141,3,30,15,0,141,142,3,14,7,0,142,29,1,0,
+        0,0,143,144,7,3,0,0,144,31,1,0,0,0,145,146,5,9,0,0,146,147,5,26,
+        0,0,147,148,3,28,14,0,148,149,5,27,0,0,149,150,5,28,0,0,150,151,
+        3,8,4,0,151,152,5,29,0,0,152,33,1,0,0,0,153,154,5,10,0,0,154,155,
+        5,26,0,0,155,156,5,32,0,0,156,157,5,27,0,0,157,165,5,30,0,0,158,
+        159,5,11,0,0,159,160,5,26,0,0,160,161,3,14,7,0,161,162,5,27,0,0,
+        162,163,5,30,0,0,163,165,1,0,0,0,164,153,1,0,0,0,164,158,1,0,0,0,
+        165,35,1,0,0,0,166,167,5,12,0,0,167,168,5,32,0,0,168,169,5,26,0,
+        0,169,170,3,38,19,0,170,171,5,27,0,0,171,172,5,28,0,0,172,173,3,
+        8,4,0,173,174,5,29,0,0,174,37,1,0,0,0,175,178,3,40,20,0,176,178,
+        1,0,0,0,177,175,1,0,0,0,177,176,1,0,0,0,178,39,1,0,0,0,179,180,3,
+        6,3,0,180,181,5,32,0,0,181,182,3,42,21,0,182,41,1,0,0,0,183,184,
+        5,31,0,0,184,185,3,6,3,0,185,186,5,32,0,0,186,187,3,42,21,0,187,
+        190,1,0,0,0,188,190,1,0,0,0,189,183,1,0,0,0,189,188,1,0,0,0,190,
+        43,1,0,0,0,191,192,5,32,0,0,192,193,5,26,0,0,193,194,3,46,23,0,194,
+        195,5,27,0,0,195,196,5,30,0,0,196,45,1,0,0,0,197,200,3,48,24,0,198,
+        200,1,0,0,0,199,197,1,0,0,0,199,198,1,0,0,0,200,47,1,0,0,0,201,202,
+        3,14,7,0,202,203,3,50,25,0,203,49,1,0,0,0,204,205,5,31,0,0,205,206,
+        3,14,7,0,206,207,3,50,25,0,207,210,1,0,0,0,208,210,1,0,0,0,209,204,
+        1,0,0,0,209,208,1,0,0,0,210,51,1,0,0,0,13,61,67,77,85,100,110,120,
+        137,164,177,189,199,209
     ]
 
 class MiLenguajeParser ( Parser ):
@@ -210,13 +212,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_programa
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrograma" ):
-                listener.enterPrograma(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrograma" ):
-                listener.exitPrograma(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrograma" ):
+                return visitor.visitPrograma(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -262,13 +262,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_declaraciones
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclaraciones" ):
-                listener.enterDeclaraciones(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclaraciones" ):
-                listener.exitDeclaraciones(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaraciones" ):
+                return visitor.visitDeclaraciones(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -321,16 +319,21 @@ class MiLenguajeParser ( Parser ):
         def PUNTO_COMA(self):
             return self.getToken(MiLenguajeParser.PUNTO_COMA, 0)
 
+        def ASIGNACION(self):
+            return self.getToken(MiLenguajeParser.ASIGNACION, 0)
+
+        def expresion(self):
+            return self.getTypedRuleContext(MiLenguajeParser.ExpresionContext,0)
+
+
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_declaracion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclaracion" ):
-                listener.enterDeclaracion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclaracion" ):
-                listener.exitDeclaracion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaracion" ):
+                return visitor.visitDeclaracion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -339,13 +342,24 @@ class MiLenguajeParser ( Parser ):
 
         localctx = MiLenguajeParser.DeclaracionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_declaracion)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 63
             self.tipo()
             self.state = 64
             self.match(MiLenguajeParser.ID)
-            self.state = 65
+            self.state = 67
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==25:
+                self.state = 65
+                self.match(MiLenguajeParser.ASIGNACION)
+                self.state = 66
+                self.expresion()
+
+
+            self.state = 69
             self.match(MiLenguajeParser.PUNTO_COMA)
         except RecognitionException as re:
             localctx.exception = re
@@ -378,13 +392,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_tipo
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTipo" ):
-                listener.enterTipo(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTipo" ):
-                listener.exitTipo(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTipo" ):
+                return visitor.visitTipo(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -396,7 +408,7 @@ class MiLenguajeParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 67
+            self.state = 71
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 120) != 0)):
                 self._errHandler.recoverInline(self)
@@ -430,13 +442,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_cuerpo
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCuerpo" ):
-                listener.enterCuerpo(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCuerpo" ):
-                listener.exitCuerpo(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCuerpo" ):
+                return visitor.visitCuerpo(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -446,14 +456,14 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.CuerpoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_cuerpo)
         try:
-            self.state = 73
+            self.state = 77
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [7, 9, 10, 11, 12, 32]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 69
+                self.state = 73
                 self.instruccion()
-                self.state = 70
+                self.state = 74
                 self.cuerpo()
                 pass
             elif token in [2, 29]:
@@ -506,13 +516,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_instruccion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInstruccion" ):
-                listener.enterInstruccion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInstruccion" ):
-                listener.exitInstruccion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInstruccion" ):
+                return visitor.visitInstruccion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -522,42 +530,42 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.InstruccionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_instruccion)
         try:
-            self.state = 81
+            self.state = 85
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 75
+                self.state = 79
                 self.asignacion()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 76
+                self.state = 80
                 self.condicional()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 77
+                self.state = 81
                 self.bucle()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 78
+                self.state = 82
                 self.entrada_salida()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 79
+                self.state = 83
                 self.llamada_funcion()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 80
+                self.state = 84
                 self.definicion_funcion()
                 pass
 
@@ -594,13 +602,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_asignacion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAsignacion" ):
-                listener.enterAsignacion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAsignacion" ):
-                listener.exitAsignacion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsignacion" ):
+                return visitor.visitAsignacion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -611,13 +617,13 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_asignacion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 83
+            self.state = 87
             self.match(MiLenguajeParser.ID)
-            self.state = 84
+            self.state = 88
             self.match(MiLenguajeParser.ASIGNACION)
-            self.state = 85
+            self.state = 89
             self.expresion()
-            self.state = 86
+            self.state = 90
             self.match(MiLenguajeParser.PUNTO_COMA)
         except RecognitionException as re:
             localctx.exception = re
@@ -646,13 +652,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_expresion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpresion" ):
-                listener.enterExpresion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpresion" ):
-                listener.exitExpresion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpresion" ):
+                return visitor.visitExpresion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -663,9 +667,9 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_expresion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
+            self.state = 92
             self.termino()
-            self.state = 89
+            self.state = 93
             self.expresion_prima()
         except RecognitionException as re:
             localctx.exception = re
@@ -700,13 +704,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_expresion_prima
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpresion_prima" ):
-                listener.enterExpresion_prima(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpresion_prima" ):
-                listener.exitExpresion_prima(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpresion_prima" ):
+                return visitor.visitExpresion_prima(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -717,21 +719,21 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_expresion_prima)
         self._la = 0 # Token type
         try:
-            self.state = 96
+            self.state = 100
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [14, 15]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 91
+                self.state = 95
                 _la = self._input.LA(1)
                 if not(_la==14 or _la==15):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 92
+                self.state = 96
                 self.termino()
-                self.state = 93
+                self.state = 97
                 self.expresion_prima()
                 pass
             elif token in [19, 20, 21, 22, 23, 24, 27, 30, 31]:
@@ -768,13 +770,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_termino
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTermino" ):
-                listener.enterTermino(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTermino" ):
-                listener.exitTermino(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTermino" ):
+                return visitor.visitTermino(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -785,9 +785,9 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_termino)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 98
+            self.state = 102
             self.factor()
-            self.state = 99
+            self.state = 103
             self.termino_prima()
         except RecognitionException as re:
             localctx.exception = re
@@ -825,13 +825,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_termino_prima
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTermino_prima" ):
-                listener.enterTermino_prima(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTermino_prima" ):
-                listener.exitTermino_prima(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTermino_prima" ):
+                return visitor.visitTermino_prima(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -842,21 +840,21 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_termino_prima)
         self._la = 0 # Token type
         try:
-            self.state = 106
+            self.state = 110
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [16, 17, 18]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 101
+                self.state = 105
                 _la = self._input.LA(1)
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 458752) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 102
+                self.state = 106
                 self.factor()
-                self.state = 103
+                self.state = 107
                 self.termino_prima()
                 pass
             elif token in [14, 15, 19, 20, 21, 22, 23, 24, 27, 30, 31]:
@@ -907,13 +905,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_factor
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFactor" ):
-                listener.enterFactor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFactor" ):
-                listener.exitFactor(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFactor" ):
+                return visitor.visitFactor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -923,36 +919,36 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.FactorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_factor)
         try:
-            self.state = 116
+            self.state = 120
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [26]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 108
+                self.state = 112
                 self.match(MiLenguajeParser.PAR_IZQ)
-                self.state = 109
+                self.state = 113
                 self.expresion()
-                self.state = 110
+                self.state = 114
                 self.match(MiLenguajeParser.PAR_DER)
                 pass
             elif token in [32]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 112
+                self.state = 116
                 self.match(MiLenguajeParser.ID)
                 pass
             elif token in [33]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 113
+                self.state = 117
                 self.match(MiLenguajeParser.NUMERO)
                 pass
             elif token in [34]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 114
+                self.state = 118
                 self.match(MiLenguajeParser.CADENA_LITERAL)
                 pass
             elif token in [13]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 115
+                self.state = 119
                 self.match(MiLenguajeParser.BOOLEAN_LITERAL)
                 pass
             else:
@@ -1004,13 +1000,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_condicional
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondicional" ):
-                listener.enterCondicional(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondicional" ):
-                listener.exitCondicional(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondicional" ):
+                return visitor.visitCondicional(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1021,21 +1015,21 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_condicional)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 118
-            self.match(MiLenguajeParser.SI)
-            self.state = 119
-            self.match(MiLenguajeParser.PAR_IZQ)
-            self.state = 120
-            self.condicion()
-            self.state = 121
-            self.match(MiLenguajeParser.PAR_DER)
             self.state = 122
-            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.match(MiLenguajeParser.SI)
             self.state = 123
-            self.cuerpo()
+            self.match(MiLenguajeParser.PAR_IZQ)
             self.state = 124
-            self.match(MiLenguajeParser.LLAVE_DER)
+            self.condicion()
             self.state = 125
+            self.match(MiLenguajeParser.PAR_DER)
+            self.state = 126
+            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.state = 127
+            self.cuerpo()
+            self.state = 128
+            self.match(MiLenguajeParser.LLAVE_DER)
+            self.state = 129
             self.sino()
         except RecognitionException as re:
             localctx.exception = re
@@ -1069,13 +1063,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_sino
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSino" ):
-                listener.enterSino(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSino" ):
-                listener.exitSino(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSino" ):
+                return visitor.visitSino(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1085,18 +1077,18 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.SinoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_sino)
         try:
-            self.state = 133
+            self.state = 137
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [8]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 127
+                self.state = 131
                 self.match(MiLenguajeParser.SINO)
-                self.state = 128
+                self.state = 132
                 self.match(MiLenguajeParser.LLAVE_IZQ)
-                self.state = 129
+                self.state = 133
                 self.cuerpo()
-                self.state = 130
+                self.state = 134
                 self.match(MiLenguajeParser.LLAVE_DER)
                 pass
             elif token in [2, 7, 9, 10, 11, 12, 29, 32]:
@@ -1136,13 +1128,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_condicion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondicion" ):
-                listener.enterCondicion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondicion" ):
-                listener.exitCondicion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondicion" ):
+                return visitor.visitCondicion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1153,11 +1143,11 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_condicion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 135
+            self.state = 139
             self.expresion()
-            self.state = 136
+            self.state = 140
             self.op_relacional()
-            self.state = 137
+            self.state = 141
             self.expresion()
         except RecognitionException as re:
             localctx.exception = re
@@ -1196,13 +1186,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_op_relacional
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOp_relacional" ):
-                listener.enterOp_relacional(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOp_relacional" ):
-                listener.exitOp_relacional(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOp_relacional" ):
+                return visitor.visitOp_relacional(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1214,7 +1202,7 @@ class MiLenguajeParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 139
+            self.state = 143
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 33030144) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1263,13 +1251,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_bucle
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBucle" ):
-                listener.enterBucle(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBucle" ):
-                listener.exitBucle(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBucle" ):
+                return visitor.visitBucle(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1280,19 +1266,19 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_bucle)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 141
-            self.match(MiLenguajeParser.MIENTRAS)
-            self.state = 142
-            self.match(MiLenguajeParser.PAR_IZQ)
-            self.state = 143
-            self.condicion()
-            self.state = 144
-            self.match(MiLenguajeParser.PAR_DER)
             self.state = 145
-            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.match(MiLenguajeParser.MIENTRAS)
             self.state = 146
-            self.cuerpo()
+            self.match(MiLenguajeParser.PAR_IZQ)
             self.state = 147
+            self.condicion()
+            self.state = 148
+            self.match(MiLenguajeParser.PAR_DER)
+            self.state = 149
+            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.state = 150
+            self.cuerpo()
+            self.state = 151
             self.match(MiLenguajeParser.LLAVE_DER)
         except RecognitionException as re:
             localctx.exception = re
@@ -1335,13 +1321,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_entrada_salida
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEntrada_salida" ):
-                listener.enterEntrada_salida(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEntrada_salida" ):
-                listener.exitEntrada_salida(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEntrada_salida" ):
+                return visitor.visitEntrada_salida(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1351,33 +1335,33 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.Entrada_salidaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_entrada_salida)
         try:
-            self.state = 160
+            self.state = 164
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [10]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 149
-                self.match(MiLenguajeParser.LEER)
-                self.state = 150
-                self.match(MiLenguajeParser.PAR_IZQ)
-                self.state = 151
-                self.match(MiLenguajeParser.ID)
-                self.state = 152
-                self.match(MiLenguajeParser.PAR_DER)
                 self.state = 153
+                self.match(MiLenguajeParser.LEER)
+                self.state = 154
+                self.match(MiLenguajeParser.PAR_IZQ)
+                self.state = 155
+                self.match(MiLenguajeParser.ID)
+                self.state = 156
+                self.match(MiLenguajeParser.PAR_DER)
+                self.state = 157
                 self.match(MiLenguajeParser.PUNTO_COMA)
                 pass
             elif token in [11]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 154
-                self.match(MiLenguajeParser.ESCRIBIR)
-                self.state = 155
-                self.match(MiLenguajeParser.PAR_IZQ)
-                self.state = 156
-                self.expresion()
-                self.state = 157
-                self.match(MiLenguajeParser.PAR_DER)
                 self.state = 158
+                self.match(MiLenguajeParser.ESCRIBIR)
+                self.state = 159
+                self.match(MiLenguajeParser.PAR_IZQ)
+                self.state = 160
+                self.expresion()
+                self.state = 161
+                self.match(MiLenguajeParser.PAR_DER)
+                self.state = 162
                 self.match(MiLenguajeParser.PUNTO_COMA)
                 pass
             else:
@@ -1428,13 +1412,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_definicion_funcion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDefinicion_funcion" ):
-                listener.enterDefinicion_funcion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDefinicion_funcion" ):
-                listener.exitDefinicion_funcion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDefinicion_funcion" ):
+                return visitor.visitDefinicion_funcion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1445,21 +1427,21 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 36, self.RULE_definicion_funcion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 162
-            self.match(MiLenguajeParser.FUNCION)
-            self.state = 163
-            self.match(MiLenguajeParser.ID)
-            self.state = 164
-            self.match(MiLenguajeParser.PAR_IZQ)
-            self.state = 165
-            self.parametros()
             self.state = 166
-            self.match(MiLenguajeParser.PAR_DER)
+            self.match(MiLenguajeParser.FUNCION)
             self.state = 167
-            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.match(MiLenguajeParser.ID)
             self.state = 168
-            self.cuerpo()
+            self.match(MiLenguajeParser.PAR_IZQ)
             self.state = 169
+            self.parametros()
+            self.state = 170
+            self.match(MiLenguajeParser.PAR_DER)
+            self.state = 171
+            self.match(MiLenguajeParser.LLAVE_IZQ)
+            self.state = 172
+            self.cuerpo()
+            self.state = 173
             self.match(MiLenguajeParser.LLAVE_DER)
         except RecognitionException as re:
             localctx.exception = re
@@ -1484,13 +1466,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_parametros
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParametros" ):
-                listener.enterParametros(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParametros" ):
-                listener.exitParametros(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParametros" ):
+                return visitor.visitParametros(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1500,12 +1480,12 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.ParametrosContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_parametros)
         try:
-            self.state = 173
+            self.state = 177
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [3, 4, 5, 6]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 171
+                self.state = 175
                 self.lista_parametros()
                 pass
             elif token in [27]:
@@ -1545,13 +1525,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_lista_parametros
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLista_parametros" ):
-                listener.enterLista_parametros(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLista_parametros" ):
-                listener.exitLista_parametros(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLista_parametros" ):
+                return visitor.visitLista_parametros(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1562,11 +1540,11 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_lista_parametros)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 175
+            self.state = 179
             self.tipo()
-            self.state = 176
+            self.state = 180
             self.match(MiLenguajeParser.ID)
-            self.state = 177
+            self.state = 181
             self.lista_parametros_prima()
         except RecognitionException as re:
             localctx.exception = re
@@ -1601,13 +1579,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_lista_parametros_prima
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLista_parametros_prima" ):
-                listener.enterLista_parametros_prima(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLista_parametros_prima" ):
-                listener.exitLista_parametros_prima(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLista_parametros_prima" ):
+                return visitor.visitLista_parametros_prima(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1617,18 +1593,18 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.Lista_parametros_primaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_lista_parametros_prima)
         try:
-            self.state = 185
+            self.state = 189
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [31]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 179
+                self.state = 183
                 self.match(MiLenguajeParser.COMA)
-                self.state = 180
+                self.state = 184
                 self.tipo()
-                self.state = 181
+                self.state = 185
                 self.match(MiLenguajeParser.ID)
-                self.state = 182
+                self.state = 186
                 self.lista_parametros_prima()
                 pass
             elif token in [27]:
@@ -1673,13 +1649,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_llamada_funcion
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLlamada_funcion" ):
-                listener.enterLlamada_funcion(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLlamada_funcion" ):
-                listener.exitLlamada_funcion(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLlamada_funcion" ):
+                return visitor.visitLlamada_funcion(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1690,15 +1664,15 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 44, self.RULE_llamada_funcion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 187
-            self.match(MiLenguajeParser.ID)
-            self.state = 188
-            self.match(MiLenguajeParser.PAR_IZQ)
-            self.state = 189
-            self.argumentos()
-            self.state = 190
-            self.match(MiLenguajeParser.PAR_DER)
             self.state = 191
+            self.match(MiLenguajeParser.ID)
+            self.state = 192
+            self.match(MiLenguajeParser.PAR_IZQ)
+            self.state = 193
+            self.argumentos()
+            self.state = 194
+            self.match(MiLenguajeParser.PAR_DER)
+            self.state = 195
             self.match(MiLenguajeParser.PUNTO_COMA)
         except RecognitionException as re:
             localctx.exception = re
@@ -1723,13 +1697,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_argumentos
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArgumentos" ):
-                listener.enterArgumentos(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArgumentos" ):
-                listener.exitArgumentos(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArgumentos" ):
+                return visitor.visitArgumentos(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1739,12 +1711,12 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.ArgumentosContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_argumentos)
         try:
-            self.state = 195
+            self.state = 199
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [13, 26, 32, 33, 34]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 193
+                self.state = 197
                 self.lista_argumentos()
                 pass
             elif token in [27]:
@@ -1781,13 +1753,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_lista_argumentos
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLista_argumentos" ):
-                listener.enterLista_argumentos(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLista_argumentos" ):
-                listener.exitLista_argumentos(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLista_argumentos" ):
+                return visitor.visitLista_argumentos(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1798,9 +1768,9 @@ class MiLenguajeParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_lista_argumentos)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 197
+            self.state = 201
             self.expresion()
-            self.state = 198
+            self.state = 202
             self.lista_argumentos_prima()
         except RecognitionException as re:
             localctx.exception = re
@@ -1832,13 +1802,11 @@ class MiLenguajeParser ( Parser ):
         def getRuleIndex(self):
             return MiLenguajeParser.RULE_lista_argumentos_prima
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLista_argumentos_prima" ):
-                listener.enterLista_argumentos_prima(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLista_argumentos_prima" ):
-                listener.exitLista_argumentos_prima(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLista_argumentos_prima" ):
+                return visitor.visitLista_argumentos_prima(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1848,16 +1816,16 @@ class MiLenguajeParser ( Parser ):
         localctx = MiLenguajeParser.Lista_argumentos_primaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_lista_argumentos_prima)
         try:
-            self.state = 205
+            self.state = 209
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [31]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 200
+                self.state = 204
                 self.match(MiLenguajeParser.COMA)
-                self.state = 201
+                self.state = 205
                 self.expresion()
-                self.state = 202
+                self.state = 206
                 self.lista_argumentos_prima()
                 pass
             elif token in [27]:

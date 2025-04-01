@@ -1,0 +1,4 @@
+inicio
+  x = 10;  // Variable no declarada
+  escribir(y);  // Variable no declarada
+fin

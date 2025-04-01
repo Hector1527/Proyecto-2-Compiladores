@@ -1,0 +1,10 @@
+inicio
+  entero edad;
+  leer(edad);
+  
+  si (edad >= 18) {
+    escribir("Eres mayor de edad");
+  } sino {
+    escribir("Eres menor de edad");
+  }
+fin

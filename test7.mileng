@@ -1,0 +1,4 @@
+inicio
+  entero x = 5  // Falta punto y coma
+  escribir(x)
+fin

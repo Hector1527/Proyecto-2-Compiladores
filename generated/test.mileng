@@ -1,5 +1,0 @@
-inicio
-  entero x;
-  x = 5 + 3;
-  escribir(x);
-fin

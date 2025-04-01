@@ -1,0 +1,3 @@
+inicio
+  entero x@ = 5;  // Carácter '@' no válido
+fin

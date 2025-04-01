@@ -4,7 +4,7 @@ programa: INICIO declaraciones cuerpo FIN;
 
 declaraciones: declaracion declaraciones | ;
 
-declaracion: tipo ID ';';
+declaracion: tipo ID ('=' expresion)? ';';
 
 tipo: ENTERO | DECIMAL | CADENA | BOOLEANO;
 
