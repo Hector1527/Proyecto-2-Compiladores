@@ -1,8 +1,7 @@
 inicio
-  funcion entero suma(entero a, entero b) {
-    retorno a + b;
-  }
-  
-  entero resultado = suma(5, 3);
-  escribir(resultado);
+    funcion suma(entero a, entero b) {
+        escribir(a + b);
+    }
+    
+    suma(5, 3);
 fin
