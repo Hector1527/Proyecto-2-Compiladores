@@ -1,0 +1,6 @@
+inicio
+    funcion pruebaTipos(decimal d) {
+        escribir(d * 2);
+    }
+    pruebaTipos(5);  // Entero como argumento para decimal
+fin

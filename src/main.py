@@ -26,7 +26,7 @@ def seleccionar_prueba():
     while True:
         try:
             opcion = int(input("\nSeleccione el número de prueba (1-8): "))
-            if 0 <= opcion <= 8:
+            if 0 <= opcion <= 9:
                 return opcion
             print("Por favor ingrese un número entre 1 y 8 (0 para salir)")
         except ValueError:

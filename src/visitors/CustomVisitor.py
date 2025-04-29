@@ -275,31 +275,54 @@ class CustomVisitor(MiLenguajeVisitor):
             self._add_error(f"Número incorrecto de argumentos para {func_name}", ctx)
             return None
             
-        # 3. Crear nuevo ámbito
+        # 3. Backup de variables existentes que serán shadoweadas
+        backup_vars = {}
+        for param in expected_params:
+            var_name = param['name']
+            if var_name in self.symbol_table:
+                backup_vars[var_name] = self.symbol_table[var_name]
+
+        # 4. Crear nuevo ámbito
         self.scope_stack.append(self.current_scope)
         self.current_scope = func_name
         
-        # 4. Registrar parámetros con valores reales
+        # 5. Registrar parámetros con valores reales
         for param, arg_value in zip(expected_params, args):
             var_name = param['name']
+            param_type = param['type']
+            
+            # Conversión implícita de enteros a decimales
+            if param_type == 'decimal' and isinstance(arg_value, int):
+                arg_value = float(arg_value)
+            # Conversión implícita de decimales a enteros (truncamiento)
+            elif param_type == 'entero' and isinstance(arg_value, float):
+                self._add_warning(f"Conversión implícita de decimal a entero: {arg_value}", ctx)
+                arg_value = int(arg_value)
+            
             self.symbol_table[var_name] = {
-                'type': param['type'],
+                'type': param_type,
                 'value': arg_value,
                 'scope': self.current_scope,
                 'initialized': True
             }
-            print(f"  [ASIGNACIÓN PARÁMETRO] {var_name} = {arg_value}")
+            print(f"  [ASIGNACIÓN PARÁMETRO] {var_name} = {arg_value} ({param_type})")
         
-        # 5. Ejecutar cuerpo de la función
+        # 6. Ejecutar cuerpo de la función
         try:
             self.visit(self.function_defs[func_name]['body'])
         except TypeError as e:
             self._add_error(str(e), ctx)
         
-        # 6. Restaurar ámbito y limpiar
-        self.current_scope = self.scope_stack.pop()
+        # 7. Restaurar estado anterior
+        # Eliminar parámetros
         for param in expected_params:
-            del self.symbol_table[param['name']]
+            var_name = param['name']
+            if var_name in self.symbol_table:
+                del self.symbol_table[var_name]
+        
+        # Restaurar variables shadoweadas
+        for var_name, value in backup_vars.items():
+            self.symbol_table[var_name] = value
         
         return None
 
