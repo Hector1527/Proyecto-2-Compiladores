@@ -42,21 +42,33 @@ class CustomVisitor(MiLenguajeVisitor):
     def visitDeclaracion(self, ctx: MiLenguajeParser.DeclaracionContext):
         var_type = ctx.tipo().getText()
         var_name = ctx.ID().getText()
+        
+        # Valor por defecto según el tipo
         default_value = 0.0 if var_type == 'decimal' else 0
+        
         var_info = {
             'type': var_type,
             'value': default_value,
             'scope': self.current_scope,
             'initialized': False
         }
+        
         if ctx.expresion():
             value = self.visit(ctx.expresion())
-            if (var_type == 'entero' and not isinstance(value, int)) or \
-               (var_type == 'decimal' and not isinstance(value, (int, float))):
-                self._add_error(f"Tipo incorrecto para variable '{var_name}'", ctx)
-            else:
-                var_info['value'] = value
-                var_info['initialized'] = True
+            
+            # Conversión explícita para decimales
+            if var_type == 'decimal':
+                if isinstance(value, int):
+                    value = float(value)
+                    print(f"[ASIGNACIÓN] {var_name} = {value:.1f}")  # Muestra el .0 para decimales
+                elif not isinstance(value, float):
+                    self._add_error(f"Tipo incorrecto para variable decimal '{var_name}'", ctx)
+            elif var_type == 'entero' and not isinstance(value, int):
+                self._add_error(f"Tipo incorrecto para variable entera '{var_name}'", ctx)
+            
+            var_info['value'] = value
+            var_info['initialized'] = True
+        
         self.symbol_table[var_name] = var_info
         return None
 
@@ -67,16 +79,26 @@ class CustomVisitor(MiLenguajeVisitor):
     def visitAsignacion(self, ctx: MiLenguajeParser.AsignacionContext):
         var_name = ctx.ID().getText()
         value = self.visit(ctx.expresion())
+        
         if var_name not in self.symbol_table:
             self._add_error(f"Variable '{var_name}' no declarada", ctx)
             return None
+        
         var_info = self.symbol_table[var_name]
-        if (var_info['type'] == 'entero' and not isinstance(value, int)) or \
-           (var_info['type'] == 'decimal' and not isinstance(value, (int, float))):
+        
+        # Conversión explícita para decimales
+        if var_info['type'] == 'decimal':
+            if isinstance(value, int):
+                value = float(value)
+                print(f"[ASIGNACIÓN] {var_name} = {value:.1f}")  # Muestra el .0 para decimales
+            elif not isinstance(value, float):
+                self._add_error(f"Tipo incorrecto en asignación para '{var_name}'", ctx)
+        elif var_info['type'] == 'entero' and not isinstance(value, int):
             self._add_error(f"Tipo incorrecto en asignación para '{var_name}'", ctx)
         else:
             var_info['value'] = value
             var_info['initialized'] = True
+        
         return None
 
     # ------------- EXPRESIONES -------------
