@@ -56,6 +56,11 @@ def main():
             visitor = CustomVisitor()
             visitor.visit(tree)
             
+            visitor = CustomVisitor()
+            visitor.visit(tree)
+            visitor.generar_codigo_python(f"test{opcion}.py")
+
+
         except FileNotFoundError:
             print(f"Error: No se encontró el archivo {test_file.name}")
         except Exception as e:
