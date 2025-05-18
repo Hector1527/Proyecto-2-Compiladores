@@ -10,6 +10,7 @@ sys.path.insert(1, str(BASE_DIR / "generated"))
 from MiLenguajeLexer import MiLenguajeLexer
 from MiLenguajeParser import MiLenguajeParser
 from visitors.CustomVisitor import CustomVisitor
+from visitors.CustomVisitor import CustomVisitor2
 
 def seleccionar_prueba():
     print("\nPruebas disponibles:")
@@ -55,10 +56,13 @@ def main():
             tree = parser.programa()
             visitor = CustomVisitor()
             visitor.visit(tree)
+
+
+            visitor2 = CustomVisitor2()
+            visitor2.visit(tree)
+            visitor2.generar_codigo_python(f"test{opcion}.py")
+
             
-            visitor = CustomVisitor()
-            visitor.visit(tree)
-            visitor.generar_codigo_python(f"test{opcion}.py")
 
 
         except FileNotFoundError:
