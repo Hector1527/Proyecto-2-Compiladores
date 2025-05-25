@@ -1,4 +1,15 @@
 inicio
-  decimal x = 5.2 + (3.8 * 2);
-  escribir(x);
+  entero x;
+  entero y;
+
+  escribir("Ingrese un número:");
+  leer(x);
+  escribir("Ingrese otro número:");
+  leer(y);
+
+  funcion suma(entero a, entero b) {
+    escribir("La suma es:");
+    escribir(a + b);
+  }
+  suma(x, y);
 fin
