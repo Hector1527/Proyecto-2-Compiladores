@@ -6,8 +6,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(BASE_DIR))
 sys.path.insert(1, str(BASE_DIR / "generated"))
-print(BASE_DIR)
-print(BASE_DIR / "generated")
 
 from MiLenguajeLexer import MiLenguajeLexer
 from MiLenguajeParser import MiLenguajeParser

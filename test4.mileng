@@ -4,5 +4,5 @@ inicio
     }
     
     suma(5, 3);
-    suma(7, 2);
+    suma(10, 2);
 fin

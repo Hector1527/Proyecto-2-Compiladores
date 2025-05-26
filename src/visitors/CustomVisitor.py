@@ -390,10 +390,6 @@ class CustomVisitor2(MiLenguajeVisitor):
         self.visitChildren(ctx)
         self.generator.indent_level -= 1
         self.generator.add_line("\nif __name__ == '__main__': main()")
-        
-        # Escribe el archivo final
-        with open('output.py', 'w', encoding='utf-8') as f:
-            f.write('\n'.join(self.generator.code))
         return None
 
     def visitDeclaracion(self, ctx: MiLenguajeParser.DeclaracionContext):
@@ -491,18 +487,16 @@ class CustomVisitor2(MiLenguajeVisitor):
     def visitLista_argumentos(self, ctx: MiLenguajeParser.Lista_argumentosContext):
         args = [self.generator.generate_expresion(ctx.expresion())]
         if ctx.lista_argumentos_prima():
-            # Agregar comas antes de cada argumento adicional
-            rest_args = [arg for arg in self.visit(ctx.lista_argumentos_prima())]
-            args += rest_args
-        return ''.join(args)
+            args += self.visit(ctx.lista_argumentos_prima())
+        return args
     
     def visitLista_argumentos_prima(self, ctx: MiLenguajeParser.Lista_argumentos_primaContext):
         if ctx.getChildCount() == 0:
             return []
         
-        # Generar solo el argumento (la coma ya está incluida en la estructura del árbol)
         arg = self.generator.generate_expresion(ctx.expresion())
-        return [arg] + self.visit(ctx.lista_argumentos_prima())
+        rest = self.visit(ctx.lista_argumentos_prima())
+        return [arg] + rest
 
     def visitLista_parametros(self, ctx: MiLenguajeParser.Lista_parametrosContext):
         param = {
