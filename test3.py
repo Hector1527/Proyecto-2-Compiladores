@@ -1,9 +1,9 @@
 def main():
-    edad = 0
-    edad = int(input())
-    if edad >= 18:
-        print("Eres mayor de edad")
-    else:
-        print("Eres menor de edad")
+    i = int(0)
+    def cuadrado(n):
+        print(n * n)
+    while i < 5:
+        cuadrado(i)
+        i = i + 1
 
 if __name__ == '__main__': main()

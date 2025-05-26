@@ -1,5 +1,5 @@
 inicio
-  entero contador = 0;
+  contador = 0;
   
   mientras (contador < 5) {
     escribir(contador);
