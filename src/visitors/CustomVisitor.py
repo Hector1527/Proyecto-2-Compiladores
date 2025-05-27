@@ -383,6 +383,13 @@ class CustomVisitor2(MiLenguajeVisitor):
         self.generator = CodeGenerator()
         self.symbol_table = {}
         self.current_scope = "global"
+        self.type_cast_map = {
+            'entero': 'int',
+            'decimal': 'float',
+            'cadena': 'str',
+            'booleano': 'bool'
+        }
+
     
     def visitPrograma(self, ctx: MiLenguajeParser.ProgramaContext):
         self.generator.add_line("def main():")
@@ -422,9 +429,20 @@ class CustomVisitor2(MiLenguajeVisitor):
     def visitEntrada_salida(self, ctx: MiLenguajeParser.Entrada_salidaContext):
         if ctx.LEER():
             var_name = ctx.ID().getText()
-            var_type = self.symbol_table.get(var_name, 'entero')
-            cast = 'float' if var_type == 'decimal' else 'int'
-            self.generator.add_line(f"{var_name} = {cast}(input())")
+            
+            if var_name not in self.symbol_table:
+                raise Exception(f"Variable '{var_name}' no declarada.")
+            
+            var_type = self.symbol_table[var_name]
+
+            # Manejo especial para booleano
+            if var_type == 'booleano':
+                self.generator.add_line(
+                    f"{var_name} = input().strip().lower() == 'verdadero'"
+                )
+            else:
+                cast = self.type_cast_map.get(var_type, 'str')  # por defecto str si tipo desconocido
+                self.generator.add_line(f"{var_name} = {cast}(input())")
         else:
             expr = self.generator.generate_expresion(ctx.expresion())
             self.generator.add_line(f"print({expr})")

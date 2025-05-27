@@ -51,8 +51,8 @@ def main():
             parser = MiLenguajeParser(stream)
             
             tree = parser.programa()
-            visitor = CustomVisitor()
-            visitor.visit(tree)
+            #visitor = CustomVisitor()
+            #visitor.visit(tree)
 
 
             visitor2 = CustomVisitor2()
