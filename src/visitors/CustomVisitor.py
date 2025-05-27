@@ -390,8 +390,7 @@ class CustomVisitor2(MiLenguajeVisitor):
             'booleano': 'bool'
         }
 
-    
-    def visitPrograma(self, ctx: MiLenguajeParser.ProgramaContext):
+    def visitPrograma(self, ctx):
         self.generator.add_line("def main():")
         self.generator.indent_level += 1
         self.visitChildren(ctx)
@@ -399,56 +398,68 @@ class CustomVisitor2(MiLenguajeVisitor):
         self.generator.add_line("\nif __name__ == '__main__': main()")
         return None
 
-    def visitDeclaracion(self, ctx: MiLenguajeParser.DeclaracionContext):
+    def visitDeclaracion(self, ctx):
         var_type = ctx.tipo().getText()
         var_name = ctx.ID().getText()
-        
-        # Generar código
+
         if ctx.expresion():
             expr = self.generator.generate_expresion(ctx.expresion())
-            if var_type == 'decimal':
-                self.generator.add_line(f"{var_name} = float({expr})")
-            elif var_type == 'entero':
-                self.generator.add_line(f"{var_name} = int({expr})")
+            if var_type == 'booleano':
+                self.generator.add_line(f"{var_name} = True if {expr} else False")
+            elif var_type in self.type_cast_map:
+                cast = self.type_cast_map[var_type]
+                self.generator.add_line(f"{var_name} = {cast}({expr})")
             else:
-                self.generator.add_line(f"{var_name} = {expr}")
+                raise Exception(f"Tipo no soportado: {var_type}")
         else:
-            default = '0.0' if var_type == 'decimal' else '0' if var_type == 'entero' else '""'
+            default = {
+                'decimal': '0.0',
+                'entero': '0',
+                'cadena': '""',
+                'booleano': 'False'
+            }.get(var_type, 'None')
             self.generator.add_line(f"{var_name} = {default}")
         
-        # Actualizar tabla de símbolos
         self.symbol_table[var_name] = var_type
         return None
 
-    def visitAsignacion(self, ctx: MiLenguajeParser.AsignacionContext):
+    def visitAsignacion(self, ctx):
         var_name = ctx.ID().getText()
         expr = self.generator.generate_expresion(ctx.expresion())
-        self.generator.add_line(f"{var_name} = {expr}")
+
+        if var_name not in self.symbol_table:
+            raise Exception(f"Variable '{var_name}' no declarada.")
+        
+        var_type = self.symbol_table[var_name]
+        if var_type == 'booleano':
+            self.generator.add_line(f"{var_name} = True if {expr} else False")
+        elif var_type in self.type_cast_map:
+            cast = self.type_cast_map[var_type]
+            self.generator.add_line(f"{var_name} = {cast}({expr})")
+        else:
+            self.generator.add_line(f"{var_name} = {expr}")
         return None
 
-    def visitEntrada_salida(self, ctx: MiLenguajeParser.Entrada_salidaContext):
+    def visitEntrada_salida(self, ctx):
         if ctx.LEER():
             var_name = ctx.ID().getText()
-            
             if var_name not in self.symbol_table:
                 raise Exception(f"Variable '{var_name}' no declarada.")
             
             var_type = self.symbol_table[var_name]
-
-            # Manejo especial para booleano
             if var_type == 'booleano':
-                self.generator.add_line(
-                    f"{var_name} = input().strip().lower() == 'verdadero'"
-                )
-            else:
-                cast = self.type_cast_map.get(var_type, 'str')  # por defecto str si tipo desconocido
+                self.generator.add_line(f"{var_name} = input().strip().lower() == 'verdadero'")
+            elif var_type in self.type_cast_map:
+                cast = self.type_cast_map[var_type]
                 self.generator.add_line(f"{var_name} = {cast}(input())")
+            else:
+                raise Exception(f"Tipo '{var_type}' no soportado para entrada.")
         else:
             expr = self.generator.generate_expresion(ctx.expresion())
             self.generator.add_line(f"print({expr})")
         return None
 
-    def visitCondicional(self, ctx: MiLenguajeParser.CondicionalContext):
+    def visitCondicional(self, ctx):
         left = self.generator.generate_expresion(ctx.condicion().expresion(0))
         right = self.generator.generate_expresion(ctx.condicion().expresion(1))
         op = ctx.condicion().op_relacional().getText()
@@ -456,7 +467,7 @@ class CustomVisitor2(MiLenguajeVisitor):
         self.generator.indent_level += 1
         self.visit(ctx.cuerpo())
         self.generator.indent_level -= 1
-        
+
         if ctx.sino().cuerpo():
             self.generator.add_line("else:")
             self.generator.indent_level += 1
@@ -464,7 +475,7 @@ class CustomVisitor2(MiLenguajeVisitor):
             self.generator.indent_level -= 1
         return None
 
-    def visitBucle(self, ctx: MiLenguajeParser.BucleContext):
+    def visitBucle(self, ctx):
         left = self.generator.generate_expresion(ctx.condicion().expresion(0))
         right = self.generator.generate_expresion(ctx.condicion().expresion(1))
         op = ctx.condicion().op_relacional().getText()
@@ -473,72 +484,54 @@ class CustomVisitor2(MiLenguajeVisitor):
         self.visit(ctx.cuerpo())
         self.generator.indent_level -= 1
         return None
-        
-    def generar_codigo_python(self, filename: str):
-        """Escribe el código acumulado en el archivo especificado"""
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(self.generator.code))
-        print(f"Código generado en: {filename}")
 
-    def visitDefinicion_funcion(self, ctx: MiLenguajeParser.Definicion_funcionContext):
+    def visitDefinicion_funcion(self, ctx):
         func_name = ctx.ID().getText()
         params = self.visit(ctx.parametros()) if ctx.parametros() else []
-        
-        # Generar dentro de main() con indentación correcta
         params_str = ', '.join([p['name'] for p in params])
-        self.generator.add_line(f"def {func_name}({params_str}):")  # Sin salto de línea antes
+        self.generator.add_line(f"def {func_name}({params_str}):")
         self.generator.indent_level += 1
         self.visit(ctx.cuerpo())
         self.generator.indent_level -= 1
+        return None
 
-    def visitLlamada_funcion(self, ctx: MiLenguajeParser.Llamada_funcionContext):
+    def visitLlamada_funcion(self, ctx):
         func_name = ctx.ID().getText()
         args = self.visit(ctx.argumentos()) if ctx.argumentos() else []
         args_str = ', '.join(args)
         self.generator.add_line(f"{func_name}({args_str})")
+        return None
 
-    def visitParametros(self, ctx: MiLenguajeParser.ParametrosContext):
-        if ctx.lista_parametros():
-            return self.visit(ctx.lista_parametros())
-        return []
+    def visitParametros(self, ctx):
+        return self.visit(ctx.lista_parametros()) if ctx.lista_parametros() else []
 
-    def visitLista_argumentos(self, ctx: MiLenguajeParser.Lista_argumentosContext):
+    def visitLista_parametros(self, ctx):
+        param = {'type': ctx.tipo().getText(), 'name': ctx.ID().getText()}
+        params = [param]
+        if ctx.lista_parametros_prima():
+            params += self.visit(ctx.lista_parametros_prima())
+        return params
+
+    def visitLista_parametros_prima(self, ctx):
+        if ctx.getChildCount() == 0:
+            return []
+        tipo = ctx.getChild(1).getText()
+        nombre = ctx.getChild(2).getText()
+        return [{'type': tipo, 'name': nombre}] + self.visit(ctx.lista_parametros_prima())
+
+    def visitLista_argumentos(self, ctx):
         args = [self.generator.generate_expresion(ctx.expresion())]
         if ctx.lista_argumentos_prima():
             args += self.visit(ctx.lista_argumentos_prima())
         return args
-    
-    def visitLista_argumentos_prima(self, ctx: MiLenguajeParser.Lista_argumentos_primaContext):
+
+    def visitLista_argumentos_prima(self, ctx):
         if ctx.getChildCount() == 0:
             return []
-        
         arg = self.generator.generate_expresion(ctx.expresion())
-        rest = self.visit(ctx.lista_argumentos_prima())
-        return [arg] + rest
+        return [arg] + self.visit(ctx.lista_argumentos_prima())
 
-    def visitLista_parametros(self, ctx: MiLenguajeParser.Lista_parametrosContext):
-        param = {
-            'type': ctx.tipo().getText(),
-            'name': ctx.ID().getText()
-        }
-        params = [param]
-        
-        # Procesar parámetros adicionales (si existen)
-        if ctx.lista_parametros_prima():
-            rest = self.visit(ctx.lista_parametros_prima()) or []  # Asegurar lista
-            params += rest
-        
-        return params
-
-    def visitLista_parametros_prima(self, ctx: MiLenguajeParser.Lista_parametros_primaContext):
-        if ctx.getChildCount() == 0:
-            return []
-        
-        # Procesar parámetro actual
-        tipo = ctx.getChild(1).getText()  # tipo del parámetro
-        nombre = ctx.getChild(2).getText()  # nombre del parámetro
-        param = {'type': tipo, 'name': nombre}
-        
-        # Procesar siguientes parámetros (si existen)
-        rest = self.visit(ctx.lista_parametros_prima()) or []  # Asegurar lista
-        return [param] + rest
+    def generar_codigo_python(self, filename: str):
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(self.generator.code))
+        print(f"Código generado en: {filename}")
