@@ -1,0 +1,10 @@
+inicio
+    entero y = 10;
+    funcion Conversion(entero grados, decimal x)
+    {
+        x = grados*1.8;
+        x = x +32
+        escribir(x);
+    }
+    Conversion(y,1);
+fin

@@ -1,10 +1,12 @@
 inicio
-  entero edad;
-  leer(edad);
+  entero i = 0;
+  funcion cuadrado(entero n) {
+    escribir(n * n);
+  }
+
   
-  si (edad >= 18) {
-    escribir("Eres mayor de edad");
-  } sino {
-    escribir("Eres menor de edad");
+  mientras (i < 5) {
+    cuadrado(i);
+    i = i + 1;
   }
 fin

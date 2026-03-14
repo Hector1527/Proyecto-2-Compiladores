@@ -47,7 +47,7 @@ bucle: MIENTRAS '(' condicion ')' '{' cuerpo '}';
 entrada_salida: LEER '(' ID ')' ';'
               | ESCRIBIR '(' expresion ')' ';';
 
-definicion_funcion: FUNCION ID '(' parametros ')' '{' cuerpo '}'
+definicion_funcion: FUNCION ID '(' parametros ')' '{' cuerpo '}';
 
 parametros: lista_parametros | ;
 

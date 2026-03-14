@@ -10,27 +10,25 @@ sys.path.insert(1, str(BASE_DIR / "generated"))
 from MiLenguajeLexer import MiLenguajeLexer
 from MiLenguajeParser import MiLenguajeParser
 from visitors.CustomVisitor import CustomVisitor
+from visitors.CustomVisitor import CustomVisitor2
 
 def seleccionar_prueba():
     print("\nPruebas disponibles:")
-    print("1. Hola Mundo")
-    print("2. Operación aritmética")
-    print("3. Condicional con input")
-    print("4. Función con parámetros")
-    print("5. Bucle while")
-    print("6. Error léxico")
-    print("7. Error sintáctico")
-    print("8. Error semántico")
+    print("1. Operaciones aritméticas")
+    print("2. Llamada a funciones y variables")
+    print("3. Llamada a funciones, ciclos y operaciones ariméticas")
+    print("4. Error semántico")
     print("0. Salir")
     
     while True:
         try:
-            opcion = int(input("\nSeleccione el número de prueba (1-8): "))
-            if 0 <= opcion <= 8:
+            opcion = int(input("\nSeleccione el número de prueba (1-4): "))
+            if 0 <= opcion <= 4:
                 return opcion
-            print("Por favor ingrese un número entre 1 y 8 (0 para salir)")
+            print("Por favor ingrese un número entre 1 y 4 (0 para salir)")
         except ValueError:
             print("Entrada inválida. Ingrese un número.")
+
 
 def main():
     base_dir = Path(__file__).parent.parent
@@ -53,9 +51,17 @@ def main():
             parser = MiLenguajeParser(stream)
             
             tree = parser.programa()
-            visitor = CustomVisitor()
-            visitor.visit(tree)
+            #visitor = CustomVisitor()
+            #visitor.visit(tree)
+
+
+            visitor2 = CustomVisitor2()
+            visitor2.visit(tree)
+            visitor2.generar_codigo_python(f"test{opcion}.py")
+
             
+
+
         except FileNotFoundError:
             print(f"Error: No se encontró el archivo {test_file.name}")
         except Exception as e:
